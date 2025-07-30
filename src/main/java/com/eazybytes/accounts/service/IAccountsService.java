@@ -1,8 +1,6 @@
 package com.eazybytes.accounts.service;
 
 import com.eazybytes.accounts.dto.CustomerDto;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.transaction.annotation.Transactional;
 
 public interface IAccountsService {
 
