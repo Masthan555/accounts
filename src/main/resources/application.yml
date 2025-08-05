@@ -18,6 +18,10 @@ spring:
     port: 5672
     username: guest
     password: guest
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
 management:
   endpoints:
@@ -57,3 +61,11 @@ info:
     name: Accounts
     description: EazyBank Accounts Microservice
     version: 1.0.0
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10s
+      permittedNumberOfCallsInHalfOpenState: 2
